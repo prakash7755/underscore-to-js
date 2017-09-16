@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Cricket Player</title>
+    <link rel="stylesheet" type="text/css" href="./css.css">
+</head>
+
+<body>
+    <div class="box">
+        <h2 style="text-align: center;">Cricket Players Year Wise Score</h2>
+        <form onsubmit="playerInformation(event)" id="player">
+            <div>
+                    <input type="text" name="playerName" placeholder="players Name" required>
+            </div>
+            <button class="form-btns" type="submit">Click</button>
+            <button class="form-btns" type="reset">Reset</button>
+    </div>
+    </form>
+    <script>
+    'use strict'
+
+    function playerInformation(event) {
+        event.preventDefault();
+
+        const players = document.getElementById('player');
+        const playerName = players[0].value;
+        $.ajax({
+            url: '/checkScore',
+            type: 'POST',
+            data: { playerName },
+            success: function(result) {
+                console.log(result);
+            }
+        })
+
+    }
+    </script>
+    </div>
+</body>
+
+</html>

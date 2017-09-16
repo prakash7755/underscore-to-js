@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Cricket Player</title>
+    <link rel="stylesheet" type="text/css" href="./css.css">
+</head>
+
+<body>
+    <div class="box">
+        <h2 style="text-align: center;">Cricket Players Year Wise Score</h2>
+        <form onsubmit="playerScore(event)" id="player">
+            <div>
+                <div>
+                    <input type="text" name="playerName" placeholder="players Name" required="">
+                </div>
+                <div>
+                    <input type="text" name="score" placeholder="2014-2015 score" required="">
+                </div>
+                <div>
+                    <input type="text" name="score" placeholder="2015-2016 score" required="">
+                </div>
+                <div>
+                    <input type="text" name="score" placeholder="2016-2017 score" required="">
+                </div>
+            </div>
+            <button class="form-btns" type="submit">Create</button>
+            <button class="form-btns" type="reset">Reset</button>
+    </div>
+    </form>
+    <script>
+    'use strict';
+
+    function playerScore(event) {
+        event.preventDefault();
+        
+        const players = document.getElementById('player');
+
+        const playerName = players[0].value;
+        const score_14_to_15 = players[1].value;
+        const score_15_to_16 = players[2].value;
+        const score_16_to_17 = players[3].value;
+
+        $.ajax({
+            url: '/cricketscore',
+            type: 'POST',
+            data: { playerName, score_14_to_15, score_15_to_16, score_16_to_17 },
+            success: function(result) {
+                console.log(result);
+            }
+        })
+
+    }
+    </script>
+    </div>
+</body>
+
+</html>

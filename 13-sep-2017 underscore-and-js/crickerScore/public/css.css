@@ -1,0 +1,48 @@
+body {
+	margin: 0px
+	padding : 0px;
+	background-color: powderblue;
+	background-size: cover;
+}
+
+.box {
+	width: 500px;
+	height: 350px;
+	background-color: rgba(0,0,0,0.4);
+	margin: 0 auto;
+	margin-top: 80px;
+	padding-top: 10px;
+    padding-left: 50px;
+    border-radius: 15px;
+    color: weight;
+    font-weight: bold;
+}
+.box input[type = 'text']{
+	width: 200px;
+	height: 30px;
+	border: 0;
+	text-align: center;
+	border-radius: 5px;
+	padding-left: 5px;
+	margin-left: 120px;
+	margin-top: 10px;
+	margin: center;
+}
+
+.form-btns{
+	display: inline-block;
+	width: 20%;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 80px;
+	border-radius: 15px;
+	font-weight: bolder;
+}
+
+.form-btns[type="submit"]:hover {
+	background-color: lime;
+}
+
+.form-btns[type="reset"]:hover {
+	background-color: orange;
+}
